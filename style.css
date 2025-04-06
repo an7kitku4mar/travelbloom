@@ -1,0 +1,455 @@
+/* Reset and Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #eef4f8;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === HEADER === */
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.logo {
+  grid-row: 1 / span 2;
+}
+
+.logo img {
+  width: 90%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Intro Text */
+.intro-section h1 {
+  font-size: 2.5em;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.intro-section p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Nav & Search Bar Row */
+.nav-search-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 250px;
+  width: 30%;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  background: transparent;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background-color: #ff8800;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1em;
+}
+
+.search-bar button:hover {
+  background-color: #ff6600;
+}
+
+/* === MAIN CONTENT === */
+main.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 30%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Headings */
+h3 {
+  font-size: 2em;
+  color: #004e64;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  background-color: rgba(0, 218, 199, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  font-family: 'Pacifico', cursive;
+}
+
+h3:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+/* Booking Button */
+.book-button {
+  display: inline-block;
+  background-color: #00a8e8;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.book-button:hover {
+  transform: scale(1.05);
+  background-color: #007bb5;
+}
+
+/* === Image Grid and Hover Effect === */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.hover-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hover-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.hover-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* black background with 20% opacity */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.hover-image:hover .hover-label {
+  opacity: 1;
+}
+
+.hover-image:hover img {
+  transform: scale(1.05);
+}
+
+/* === Location Section === */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height:auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.location {
+  margin-top: 15px;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.location p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.location a {
+  color: #00a8e8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.location a:hover {
+  color: #004e64;
+  text-decoration: underline;
+}
+
+/* === FOOTER === */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+}
+
+.footer-right {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* === About Page Styles === */
+.about-page {
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.8;
+}
+
+.about-section h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff6600;
+}
+
+.about-section p {
+  margin-bottom: 20px;
+}
+
+/* === Contact Page Styles === */
+.contact-page {
+  padding: 40px;
+  background-color: #ffffff;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+}
+
+.contact-info h1,
+.contact-form h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #ff6600;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.contact-details div {
+  flex: 1 1 200px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contact-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #00a8e8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #007bb5;
+}
+/* Social Media Bar */
+.social-media-bar {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social-icon {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+.facebook:hover {
+  background-color: #2d4373;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+.twitter:hover {
+  background-color: #0d8ddb;
+}
+
+.instagram {
+  background-color: #e4405f;
+}
+.instagram:hover {
+  background-color: #cc3350;
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+.youtube:hover {
+  background-color: #cc0000;
+}
+
+.location {
+  background-color: #4caf50;
+}
+.location:hover {
+  background-color: #3c9d40;
+}
